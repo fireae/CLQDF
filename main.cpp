@@ -56,11 +56,9 @@ int main()
 	printf("test is over");
 
 #endif
-	//printf("test\n") ;
 
 	//initialize();
-	//codelen = 2 ;
-	//cout<<codelen<<endl;
+
 	return 0 ;
 }
 
@@ -188,8 +186,6 @@ int classTable( char* label, int sampNum, char* table, short* truth )
 		if( label[n*codelen]==-1 )		// outliers sample
 			continue;
 
-
-
 		pos = posInTable( label+n*codelen, table, cnum );
 		//printf("pos = %d ftrDim = %d/sampNum = %ld\n", pos, n, sampNum);
 		if( pos==cnum )
@@ -264,8 +260,6 @@ void loadDictionary(string saveDictionary_file)
 	fread( codetable, codelen, classNum, fp );
 
 
-
-
 }
 
 void saveDictionary(string filetitle)
@@ -281,7 +275,7 @@ void saveDictionary(string filetitle)
 	fwrite( &classNum, 4, 1, fp );
 	fwrite( codetable, codelen, classNum, fp );
 
-		// transformation and classifier parameters
+	// transformation and classifier parameters
 	pClassifr->saveClassifier( fp );
 
 	fclose( fp );
